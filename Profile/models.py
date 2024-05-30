@@ -6,7 +6,7 @@ class CustomUserManager(BaseUserManager):
         if not email:
             raise ValueError('The email must be set')
         email = self.normalize_email(email)
-        user = self.model(email=email, **extra_fields)
+        user = self.model(email=email, username = email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -23,7 +23,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 class CustomUser(AbstractUser):
-    username = None  # Completely remove the username field
+     # Completely remove the username field
     email = models.EmailField(unique=True)
 
     USERNAME_FIELD = 'email'
