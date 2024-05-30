@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test2', # this is the name of your database
+        'NAME': 'mysite', # this is the name of your database
         'HOST': 'localhost', # here you put localhost because you're
                              # running the postgres server locally
         'USER': 'postgres',  # you put the username you have
