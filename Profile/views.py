@@ -5,9 +5,11 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.response import Response
 from rest_framework import status
 import Profile.serializer
-from Profile.serializer import CustomTokenObtainPairSerializer, RegisterSerializer, UserSerializer
+from Profile.serializer import CustomTokenObtainPairSerializer, RegisterSerializer, UserSerializer, UpdateUserSerializer
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from Profile.models import CustomUser
+from django.contrib.auth import get_user_model
+from rest_framework import serializers
 
 
 # Create your views here.
@@ -49,6 +51,11 @@ class RegisterApi(generics.GenericAPIView):
 class UserListView(generics.ListAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
+
+
+class UpdateUser(generics.UpdateAPIView):
+    serializer_class = UpdateUserSerializer
+    queryset = CustomUser.objects.all()
 
 
 def index(request):
