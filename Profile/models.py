@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
-
+from phonenumber_field.formfields import PhoneNumberField
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -27,6 +27,7 @@ class CustomUserManager(BaseUserManager):
 class CustomUser(AbstractUser):
     # Completely remove the username field
     email = models.EmailField(unique=True)
+    phone = PhoneNumberField(null=False, blank=False, unique=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
