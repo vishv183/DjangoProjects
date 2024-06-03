@@ -5,8 +5,9 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.response import Response
 from rest_framework import status
 import Profile.serializer
-from Profile.serializer import CustomTokenObtainPairSerializer, RegisterSerializer
+from Profile.serializer import CustomTokenObtainPairSerializer, RegisterSerializer, UserSerializer
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from Profile.models import CustomUser
 
 
 # Create your views here.
@@ -43,6 +44,12 @@ class RegisterApi(generics.GenericAPIView):
                 status=status.HTTP_201_CREATED
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserListView(generics.ListAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserSerializer
+
 
 def index(request):
     return HttpResponse('Home Page')
