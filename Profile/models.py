@@ -38,3 +38,7 @@ class CustomUser(AbstractUser, models.Model):
     def __str__(self):
         return self.email
 
+
+class AudioText(models.Model):
+    audio_file = models.FileField(upload_to='audio_files/')
+    text = models.TextField()

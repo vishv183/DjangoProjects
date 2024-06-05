@@ -3,6 +3,8 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from Profile.models import CustomUser
 from django.contrib.auth import get_user_model
+from rest_framework.serializers import Serializer, FileField
+
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -37,7 +39,7 @@ class UserSerializer(serializers.ModelSerializer):
 class UpdateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['username','email','first_name', 'last_name', 'phone_number', 'address']
+        fields = ['username', 'email', 'first_name', 'last_name', 'phone_number', 'address']
 
     def get_fields(self):
         # Get the default fields from the superclass
@@ -46,8 +48,14 @@ class UpdateUserSerializer(serializers.ModelSerializer):
         # Make email, username, and password read-only
         fields['email'].read_only = True
         fields['username'].read_only = True
-
         return fields
+
+
+class UploadSerializer(Serializer):
+    file_uploaded = FileField()
+
+    class Meta:
+        fields = ['file_uploaded']
 
     def update(self, instance, validated_data):
         # Update phone_number and address
@@ -57,3 +65,9 @@ class UpdateUserSerializer(serializers.ModelSerializer):
         instance.address = validated_data.get('address', instance.address)
         instance.save()
         return instance
+
+
+# class AudioTextSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = AudioText
+#         fields = ('audio_file', 'text')
