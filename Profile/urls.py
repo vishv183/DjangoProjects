@@ -22,6 +22,7 @@ urlpatterns = [
     # path('api/update-user/<int:pk>/', UpdateUser.as_view(), name='UpdateUser'),
     path('user-update/', UserListUpdateView.as_view(), name='superuer'),
     path("user-update-serializer/", UserUpdateSView.as_view(), name='userupdate serializer'),
+
     path('', include(router.urls)),
 
 ]

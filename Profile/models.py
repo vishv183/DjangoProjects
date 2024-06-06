@@ -29,6 +29,7 @@ class CustomUser(AbstractUser, models.Model):
     email = models.EmailField(unique=True)
     phone_number = models.CharField(blank=True, max_length=20)
     address = models.TextField(blank=True)
+    is_verified = models.BooleanField(default=False )
     otp = models.CharField(max_length=6, null=True, blank=True)
 
     USERNAME_FIELD = 'email'
