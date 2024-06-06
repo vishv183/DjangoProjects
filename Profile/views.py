@@ -8,7 +8,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 import Profile.serializer
 from Profile.serializer import CustomTokenObtainPairSerializer, RegisterSerializer, UserSerializer, \
-    UpdateUserSerializer, UploadSerializer
+    UpdateUserSerializer, UploadSerializer, UserUpdateSerializerUsingSerializer
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from Profile.models import CustomUser
 from django.contrib.auth import get_user_model
@@ -17,6 +17,8 @@ from rest_framework import permissions
 from rest_framework.views import APIView
 from Profile.Permissions import IsOwnerOrSuperuser
 from django.test import TestCase
+from rest_framework.permissions import IsAuthenticated
+
 
 # Create your views here.
 class CustomTokenObtainPairView(TokenObtainPairView):
@@ -92,6 +94,16 @@ class UserListUpdateView(generics.ListAPIView, generics.UpdateAPIView):
         return UserSerializer
 
 
+class UserUpdateSView(generics.UpdateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserUpdateSerializerUsingSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        # Assume the user is updating their own profile
+        return self.request.user
+
+
 class UploadViewSet(ViewSet):
     serializer_class = UploadSerializer
 
@@ -105,19 +117,14 @@ class UploadViewSet(ViewSet):
         return Response(response)
 
 
-class AudioToTextView(APIView):
-    def post(self, request, *args, **kwargs):
-        audio_file = request.FILES.get('audio_file')
-        if not audio_file:
-            return Response({'error': 'No audio file provided'}, status=status.HTTP_400_BAD_REQUEST)
+class UserUpdateView(generics.UpdateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserUpdateSerializerUsingSerializer
+    permission_classes = [IsAuthenticated]
 
-        text = convert_audio_to_text(audio_file)
-        return Response({'text': text}, status=status.HTTP_200_OK)
+    def get_object(self):
+        return self.request.user
 
-
-def convert_audio_to_text(audio_file):
-    # Implement your audio to text conversion logic here
-    return "Converted text from audio"
 
 def index(request):
     return HttpResponse('Home Page')

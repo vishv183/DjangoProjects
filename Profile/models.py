@@ -29,6 +29,7 @@ class CustomUser(AbstractUser, models.Model):
     email = models.EmailField(unique=True)
     phone_number = models.CharField(blank=True, max_length=20)
     address = models.TextField(blank=True)
+    otp = models.CharField(max_length=6, null=True, blank=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -38,7 +39,3 @@ class CustomUser(AbstractUser, models.Model):
     def __str__(self):
         return self.email
 
-
-class AudioText(models.Model):
-    audio_file = models.FileField(upload_to='audio_files/')
-    text = models.TextField()
