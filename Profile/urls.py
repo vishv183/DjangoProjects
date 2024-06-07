@@ -5,7 +5,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView
 )
-from Profile.views import CustomTokenObtainPairView, RegisterApi, UserListUpdateView, UserUpdateSView
+from Profile.views import CustomTokenObtainPairView, RegisterApi, UserListUpdateView, UserUpdateSView, generate_otp, validate_otp
 
 from django.urls import path, include
 from rest_framework import routers
@@ -22,7 +22,8 @@ urlpatterns = [
     # path('api/update-user/<int:pk>/', UpdateUser.as_view(), name='UpdateUser'),
     path('user-update/', UserListUpdateView.as_view(), name='superuer'),
     path("user-update-serializer/", UserUpdateSView.as_view(), name='userupdate serializer'),
-
+    path('generate-otp/', generate_otp, name='generate-otp'),
+    path('validate-otp/', validate_otp, name='validate-otp'),
     path('', include(router.urls)),
 
 ]

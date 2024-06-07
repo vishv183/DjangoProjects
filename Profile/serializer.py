@@ -1,7 +1,7 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from Profile.models import CustomUser
+from Profile.models import CustomUser, OTPDevice
 from django.contrib.auth import get_user_model
 from rest_framework.serializers import Serializer, FileField
 
@@ -39,7 +39,7 @@ class UserSerializer(serializers.ModelSerializer):
 class UpdateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'first_name', 'last_name', 'phone_number', 'address']
+        fields = ['username', 'email', 'first_name', 'last_name', 'phone_number', 'address', 'is_verified']
 
     def get_fields(self):
         # Get the default fields from the superclass
@@ -85,3 +85,15 @@ class UserUpdateSerializerUsingSerializer(serializers.ModelSerializer):
         return instance
 
 
+class OTPDeviceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OTPDevice
+        fields = ['id', 'user', 'otp', 'expires_at']
+
+
+class GenerateOTPSerializer(serializers.Serializer):
+    pass  # No input data needed for OTP generation
+
+
+class ValidateOTPSerializer(serializers.Serializer):
+    otp = serializers.CharField(max_length=6)

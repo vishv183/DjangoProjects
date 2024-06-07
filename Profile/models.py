@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
-
+from django_otp.models import Device
+from django.conf import settings
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -29,9 +30,8 @@ class CustomUser(AbstractUser, models.Model):
     email = models.EmailField(unique=True)
     phone_number = models.CharField(blank=True, max_length=20)
     address = models.TextField(blank=True)
-    is_verified = models.BooleanField(default=False )
+    is_verified = models.BooleanField(default=False)
     otp = models.CharField(max_length=6, null=True, blank=True)
-
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
@@ -40,3 +40,19 @@ class CustomUser(AbstractUser, models.Model):
     def __str__(self):
         return self.email
 
+
+
+
+
+
+
+class OTPDevice(Device):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    otp = models.CharField(max_length=6)
+    expires_at = models.DateTimeField()
+
+    def is_expired(self):
+        return timezone.now() > self.expires_at
+
+    def __str__(self):
+        return f"OTP for {self.user.email}: {self.otp}"

@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from Profile.models import CustomUser
 from django.contrib.auth.admin import UserAdmin
+from Profile.models import OTPDevice
 
 
 # Register your models here.
@@ -24,3 +25,4 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(OTPDevice)

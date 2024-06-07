@@ -7,10 +7,13 @@ from rest_framework import status
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 import Profile.serializer
-from Profile.serializer import CustomTokenObtainPairSerializer, RegisterSerializer, UserSerializer, \
-    UpdateUserSerializer, UploadSerializer, UserUpdateSerializerUsingSerializer
+from Profile.serializer import (CustomTokenObtainPairSerializer, RegisterSerializer, UserSerializer, \
+                                UpdateUserSerializer, UploadSerializer, UserUpdateSerializerUsingSerializer,
+                                GenerateOTPSerializer, \
+                                ValidateOTPSerializer)
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from Profile.models import CustomUser
+from Profile.models import CustomUser, OTPDevice
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from rest_framework import permissions
@@ -18,8 +21,10 @@ from rest_framework.views import APIView
 from Profile.Permissions import IsOwnerOrSuperuser
 from django.test import TestCase
 from rest_framework.permissions import IsAuthenticated
-
-
+from Profile.generators import OTPGenerator
+from Profile.handlers import OTPHandler
+from django.utils import timezone
+from Profile.emails import send_otp_email
 # Create your views here.
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
@@ -124,6 +129,46 @@ class UserUpdateView(generics.UpdateAPIView):
 
     def get_object(self):
         return self.request.user
+
+
+class UserDetailView(generics.RetrieveUpdateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def generate_otp(request):
+    user = request.user
+    otp = OTPGenerator.generate_unique_otp()
+    expires_at = timezone.now() + timezone.timedelta(minutes=5)
+    OTPDevice.objects.create(user=user, otp=otp, expires_at=expires_at)
+    response = send_otp_email(user.email, otp)
+    print('otp send successfully')
+    # Send OTP to user via email/sms etc.
+    return Response( status=status.HTTP_201_CREATED)
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def validate_otp(request):
+    serializer = ValidateOTPSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+
+    user = request.user
+    otp_entered = serializer.validated_data['otp']
+    stored_otp = OTPHandler.get_otp(user)
+
+    if OTPHandler.validate_otp(otp_entered, stored_otp):
+        # OTP validation successful
+        return Response({'detail': 'OTP validation successful'}, status=status.HTTP_200_OK)
+    else:
+        # OTP validation failed
+        return Response({'detail': 'OTP validation failed'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 def index(request):
