@@ -9,9 +9,7 @@ from Profile.views import CustomTokenObtainPairView, RegisterApi, UserListUpdate
 
 from django.urls import path, include
 from rest_framework import routers
-from Profile.views import UploadViewSet
-router = routers.DefaultRouter()
-router.register(r'upload', UploadViewSet, basename="upload")
+
 urlpatterns = [
     path('', index, name='index'),
     path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -24,6 +22,5 @@ urlpatterns = [
     path("user-update-serializer/", UserUpdateSView.as_view(), name='userupdate serializer'),
     path('generate-otp/', generate_otp, name='generate-otp'),
     path('validate-otp/', validate_otp, name='validate-otp'),
-    path('', include(router.urls)),
 
 ]

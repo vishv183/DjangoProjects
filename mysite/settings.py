@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'Profile.apps.ProfileConfig',
     'laptop.apps.LaptopConfig',
-    'django_otp',
     'oauth2_provider',
+    'django_otp'
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
