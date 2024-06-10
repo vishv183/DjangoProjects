@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from laptop.models import GamingLaptop
+from laptop.models import Laptop
 
 
-class GamingLaptopSerializer(serializers.ModelSerializer):
+class LaptopSerializer(serializers.ModelSerializer):
     class Meta:
-        model = GamingLaptop
+        model = Laptop
         fields = '__all__'

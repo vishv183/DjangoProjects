@@ -5,20 +5,20 @@ from rest_framework import generics, status
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from Profile.serializer import UploadSerializer
-from laptop.serializer import GamingLaptopSerializer
-from laptop.models import GamingLaptop
+from laptop.serializer import LaptopSerializer
+from laptop.models import Laptop
 
 
 # Create your views here.
 
-class GamingLaptopListCreateView(generics.ListCreateAPIView):
-    queryset = GamingLaptop.objects.all()
-    serializer_class = GamingLaptopSerializer
+class LaptopsListCreateView(generics.ListCreateAPIView):
+    queryset = Laptop.objects.all()
+    serializer_class = LaptopSerializer
 
 
-class GamingLaptopRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = GamingLaptop.objects.all()
-    serializer_class = GamingLaptopSerializer
+class LaptopsRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Laptop.objects.all()
+    serializer_class = LaptopSerializer
 
 
 class UploadViewSet(ViewSet):
@@ -38,10 +38,25 @@ class UploadViewSet(ViewSet):
             response = {"error": "Only CSV files are allowed."}
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
         print(type(content_type))
-
-        # file_uploaded.decode("utf-8")
+        
         csvFile = csv.DictReader(file_object)
-
+        for line in csvFile:
+            print(line['Screen'])
+            print(line)
+            laptop = Laptop.objects.create(
+                laptop=line.get('Laptop'),
+                status=line.get('Status'),
+                brand=line.get('Brand'),
+                model=line.get('Model',),
+                cpu=line.get('CPU',),
+                ram=line.get('RAM',),
+                Storage=line.get('Storage'),
+                storage_type=line.get('Storage type'),
+                gpu=line.get('GPU'),
+                touch=True if line.get('Touch', '') == "Yes" else False,
+                screen=float(line.get('Screen', '0')) if line.get('Screen', '') != "" else None,
+                price=line.get('Final Price', '')
+            )
 
         response = "POST API and you have uploaded a {} file".format(content_type)
         return Response(response)

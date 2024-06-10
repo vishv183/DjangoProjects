@@ -1,0 +1,4 @@
+Laptop,Brand,Model,CPU,RAM,Storage,Storage type,GPU,Screen,Touch,Final Price
+"ASUS ExpertBook B1 B1502CBA-EJ0436X Intel Core i5-1235U/8GB/512GB SSD/15.6""",Asus,ExpertBook,Intel Core i5,8,512,SSD,,15.6,No,1008.9999999999999
+"Alurin Go Start Intel Celeron N4020/8GB/256GB SSD/15.6""",Alurin,Go,Intel Celeron,8,256,SSD,,15.6,No,299.0
+"ASUS ExpertBook B1 B1502CBA-EJ0424X Intel Core i3-1215U/8GB/256GB SSD/15.6""",Asus,ExpertBook,Intel Core i3,8,256,SSD,,15.6,No,789.0
