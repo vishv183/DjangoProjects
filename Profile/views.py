@@ -25,6 +25,7 @@ from Profile.generators import OTPGenerator
 from Profile.handlers import OTPHandler
 from django.utils import timezone
 from Profile.emails import send_otp_email
+
 # Create your views here.
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer

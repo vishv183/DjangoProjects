@@ -44,9 +44,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'Profile.apps.ProfileConfig',
+    'Watches.apps.WatchesConfig',
     'laptop.apps.LaptopConfig',
     'oauth2_provider',
-    'django_otp'
+    'django_otp',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
