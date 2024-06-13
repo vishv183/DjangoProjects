@@ -1,3 +1,5 @@
+from django.utils import timezone
+
 from django.db import models
 from import_export import resources
 
@@ -25,7 +27,7 @@ class Watch(models.Model):
     complications = models.CharField(max_length=255)
     power_reserve = models.CharField(max_length =100)
     price = models.CharField(blank=True, null=True, max_length=100)
-    date = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now=True)
     class Meta:
         ordering = ['id']
 

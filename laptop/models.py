@@ -1,5 +1,5 @@
 from django.db import models
-
+from import_export import resources
 # Create your models here.
 STORAGE_CHOICES = [
     ('SSD', 'SSD'),
@@ -26,3 +26,5 @@ class Laptop(models.Model):
 
     def __str__(self):
         return f' {self.id}, {self.laptop}'
+
+

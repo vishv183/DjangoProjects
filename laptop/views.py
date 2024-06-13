@@ -10,10 +10,10 @@ from laptop.models import Laptop
 
 
 # Create your views here.
-
 class LaptopsListCreateView(generics.ListCreateAPIView):
     queryset = Laptop.objects.all()
     serializer_class = LaptopSerializer
+
 
 
 class LaptopsRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):

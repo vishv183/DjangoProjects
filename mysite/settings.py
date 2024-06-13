@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'laptop.apps.LaptopConfig',
     'oauth2_provider',
     'django_otp',
+    'import_export',
+    'django_filters'
+
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
