@@ -55,7 +55,9 @@ class UploadViewSet(ViewSet):
                 gpu=line.get('GPU'),
                 touch=True if line.get('Touch', '') == "Yes" else False,
                 screen=float(line.get('Screen', '0')) if line.get('Screen', '') != "" else None,
-                price=line.get('Final Price', '')
+                price=line.get('Final Price', ''),
+                created_at=line.get('created_at')
+
             )
 
         response = "POST API and you have uploaded a {} file".format(content_type)

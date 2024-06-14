@@ -20,6 +20,7 @@ class Laptop(models.Model):
     screen = models.FloatField(null=True, blank=True)
     touch = models.BooleanField()
     price = models.FloatField(null=True, blank=True)
+    created_at = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
