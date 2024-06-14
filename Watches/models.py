@@ -26,7 +26,7 @@ class Watch(models.Model):
     crystal_material = models.CharField(max_length=100)
     complications = models.CharField(max_length=255)
     power_reserve = models.CharField(max_length =100)
-    price = models.CharField(blank=True, null=True, max_length=100)
+    price = models.FloatField(blank=True, null=True, max_length=100)
     created_at = models.DateTimeField()
     class Meta:
         ordering = ['id']

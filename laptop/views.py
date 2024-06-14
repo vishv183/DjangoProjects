@@ -2,17 +2,21 @@ import csv
 from io import StringIO
 from django.shortcuts import render
 from rest_framework import generics, status
+from rest_framework.filters import OrderingFilter
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from Profile.serializer import UploadSerializer
+from Watches.filters import BaseFilter
 from laptop.serializer import LaptopSerializer
 from laptop.models import Laptop
-
+from django_filters import rest_framework as filters
 
 # Create your views here.
 class LaptopsListCreateView(generics.ListCreateAPIView):
     queryset = Laptop.objects.all()
     serializer_class = LaptopSerializer
+    filter_backends = (filters.DjangoFilterBackend,OrderingFilter)
+    filterset_class =  BaseFilter
 
 
 
@@ -57,7 +61,6 @@ class UploadViewSet(ViewSet):
                 screen=float(line.get('Screen', '0')) if line.get('Screen', '') != "" else None,
                 price=line.get('Final Price', ''),
                 created_at=line.get('created_at')
-
             )
 
         response = "POST API and you have uploaded a {} file".format(content_type)

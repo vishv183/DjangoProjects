@@ -1,4 +1,4 @@
-﻿Brand,Model,Case Material,Strap Material,Movement Type,Water Resistance,Case Diameter (mm),Case Thickness (mm),Band Width (mm),Dial Color,Crystal Material,Complications,Power Reserve,price,created_at
+﻿brand,model,case_material,strap_material,movement_type,water_resistance,case_diameter,case_thickness,bandwidth,dial_color,crystal_material,complications,power_reserve,price,created_at
 Rolex,Submariner,Stainless Steel,Stainless Steel,Automatic,300 meters,40,13,20,Black,Sapphire,Date,48 hours,9500.0,2022-08-24 01:07:51
 Omega,Seamaster,Titanium,Rubber,Automatic,600 meters,43.5,14.47,21,Blue,Sapphire,Date,60 hours,5800.0,2021-10-09 09:31:27
 Tag Heuer,Carrera,Stainless Steel,Leather,Automatic,100 meters,41,13,20,White,Sapphire,Chronograph,42 hours,4200.0,2023-09-17 08:07:20

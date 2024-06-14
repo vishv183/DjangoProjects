@@ -4,11 +4,11 @@ from django_filters import filters
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from Watches.filters import MyModelFilter
+from Watches.filters import MyModelFilter, BaseFilter
 from Watches.serializer import WatchSerializer
 from Watches.models import Watch
 from django_filters import rest_framework as filters
-
+from rest_framework.filters import OrderingFilter
 # Create your views here.
 
 
@@ -24,8 +24,8 @@ def unique_companies(request):
 class WatchListAPIView(generics.ListAPIView):
     queryset =  Watch.objects.all()
     serializer_class = WatchSerializer
-    filter_backends = (filters.DjangoFilterBackend,)
-    filterset_class = MyModelFilter
+    filter_backends = (filters.DjangoFilterBackend,OrderingFilter)
+    filterset_class = MyModelFilter, BaseFilter
 
 
 
