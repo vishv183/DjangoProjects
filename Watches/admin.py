@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Watches.models import Watch
+from Watches.models import Watch, MyModel, Time
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
 from Watches.resources import WatchResources
@@ -8,7 +8,7 @@ from import_export.formats import base_formats
 
 class WatchAdmin(ImportExportModelAdmin):
     resources = WatchResources
-
+    list_filter = ('brand', 'price')
     def get_export_formats(self):
         """
             Returns available export formats.
@@ -26,3 +26,6 @@ class WatchAdmin(ImportExportModelAdmin):
 
 
 admin.site.register(Watch, WatchAdmin)
+admin.site.register(MyModel)
+admin.site.register(Time)
+

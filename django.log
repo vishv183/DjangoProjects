@@ -1,0 +1,481 @@
+INFO 2024-06-18 07:05:41,303 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 07:05:43,898 basehttp "GET /admin/ HTTP/1.1" 200 27219
+INFO 2024-06-18 07:05:53,209 basehttp "GET /watch/api/ HTTP/1.1" 200 103149
+INFO 2024-06-18 09:31:59,625 autoreload /Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/contrib/admin/widgets.py changed, reloading.
+INFO 2024-06-18 09:37:34,263 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:06:18,482 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:06:23,726 basehttp "GET /admin/ HTTP/1.1" 200 28223
+WARNING 2024-06-18 10:06:24,005 log Not Found: /favicon.ico
+WARNING 2024-06-18 10:06:24,007 basehttp "GET /favicon.ico HTTP/1.1" 404 2644
+INFO 2024-06-18 10:06:26,165 basehttp "GET /admin/Watches/mymodel/ HTTP/1.1" 200 24607
+INFO 2024-06-18 10:06:26,198 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6811
+INFO 2024-06-18 10:06:26,199 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2024-06-18 10:06:26,202 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2024-06-18 10:06:26,205 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+INFO 2024-06-18 10:06:26,208 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+INFO 2024-06-18 10:06:26,208 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2024-06-18 10:06:26,211 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:06:26,211 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2024-06-18 10:06:26,214 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2024-06-18 10:06:26,214 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2024-06-18 10:06:26,218 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2024-06-18 10:06:26,236 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2024-06-18 10:06:28,532 basehttp "GET /admin/Watches/mymodel/add/ HTTP/1.1" 200 28122
+INFO 2024-06-18 10:06:28,551 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2024-06-18 10:06:28,552 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2024-06-18 10:06:28,553 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2024-06-18 10:06:28,554 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 9090
+INFO 2024-06-18 10:06:28,561 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11800
+INFO 2024-06-18 10:06:28,567 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:06:28,568 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2024-06-18 10:06:28,610 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2024-06-18 10:06:28,611 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2024-06-18 10:07:06,141 basehttp "GET /admin/Watches/mymodel/ HTTP/1.1" 200 24607
+INFO 2024-06-18 10:07:06,682 basehttp "GET /admin/Watches/mymodel/add/ HTTP/1.1" 200 28122
+INFO 2024-06-18 10:08:07,690 basehttp "POST /admin/Watches/mymodel/add/ HTTP/1.1" 200 28343
+INFO 2024-06-18 10:08:07,720 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2024-06-18 10:08:52,610 log Internal Server Error: /admin/Watches/mymodel/add/
+Traceback (most recent call last):
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1945, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1861, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 954, in log_addition
+    object_repr=str(obj),
+  File "/Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/models.py", line 50, in __str__
+    return f'{self.numbers}'
+AttributeError: 'MyModel' object has no attribute 'numbers'
+ERROR 2024-06-18 10:08:52,613 basehttp "POST /admin/Watches/mymodel/add/ HTTP/1.1" 500 126404
+INFO 2024-06-18 10:09:05,682 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/models.py changed, reloading.
+INFO 2024-06-18 10:09:06,348 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:09:10,654 basehttp "POST /admin/Watches/mymodel/add/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:09:10,725 basehttp "GET /admin/Watches/mymodel/ HTTP/1.1" 200 26063
+INFO 2024-06-18 10:09:10,783 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:09:10,798 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2024-06-18 10:09:13,408 basehttp "GET /admin/Watches/mymodel/2/change/ HTTP/1.1" 200 28384
+INFO 2024-06-18 10:09:13,443 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:09:25,532 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/models.py changed, reloading.
+INFO 2024-06-18 10:09:26,123 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:09:27,089 basehttp "GET /admin/Watches/mymodel/2/change/ HTTP/1.1" 200 28390
+INFO 2024-06-18 10:09:27,117 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:09:30,928 basehttp "POST /admin/Watches/mymodel/2/change/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:09:30,987 basehttp "GET /admin/Watches/mymodel/ HTTP/1.1" 200 26074
+INFO 2024-06-18 10:09:31,028 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:09:34,894 basehttp "GET /admin/Watches/mymodel/add/ HTTP/1.1" 200 28122
+INFO 2024-06-18 10:09:34,927 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:10:10,215 basehttp "POST /admin/Watches/mymodel/add/ HTTP/1.1" 200 28356
+INFO 2024-06-18 10:10:10,236 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,239 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,241 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,242 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,242 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,245 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,245 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,245 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,247 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,248 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,249 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,249 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,250 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,252 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:10:10,254 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,295 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:10,298 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:13,327 basehttp "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1094
+INFO 2024-06-18 10:10:20,550 basehttp "POST /admin/Watches/mymodel/add/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:10:20,598 basehttp "GET /admin/Watches/mymodel/ HTTP/1.1" 200 26334
+INFO 2024-06-18 10:10:20,619 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:20,627 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:10:20,632 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:10:47,527 basehttp "GET /admin/Watches/mymodel/add/ HTTP/1.1" 200 28122
+INFO 2024-06-18 10:10:47,559 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:12:14,382 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/models.py changed, reloading.
+INFO 2024-06-18 10:12:15,090 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:12:47,556 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:13:28,289 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:13:32,808 basehttp "GET /admin/Watches/mymodel/add/ HTTP/1.1" 200 28406
+INFO 2024-06-18 10:13:32,842 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:13:41,654 basehttp "GET /admin/Watches/ HTTP/1.1" 200 19226
+INFO 2024-06-18 10:13:44,533 basehttp "GET /admin/Watches/time/ HTTP/1.1" 200 24865
+INFO 2024-06-18 10:13:44,562 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:13:47,077 basehttp "GET /admin/Watches/time/add/ HTTP/1.1" 200 25074
+INFO 2024-06-18 10:13:47,120 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:13:53,275 basehttp "POST /admin/Watches/time/add/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:13:53,321 basehttp "GET /admin/Watches/time/add/ HTTP/1.1" 200 25310
+INFO 2024-06-18 10:13:53,349 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:13:53,369 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:56,791 basehttp "POST /admin/Watches/time/add/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:13:56,855 basehttp "GET /admin/Watches/time/ HTTP/1.1" 200 26621
+INFO 2024-06-18 10:13:56,885 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:56,885 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:56,889 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:56,890 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:56,891 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:56,893 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:56,893 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:56,893 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:56,896 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:13:59,341 basehttp "GET /admin/Watches/time/1/change/ HTTP/1.1" 200 25290
+INFO 2024-06-18 10:13:59,357 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:59,357 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:59,369 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:13:59,373 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:13:59,375 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:14:01,667 basehttp "GET /admin/Watches/time/1/delete/ HTTP/1.1" 200 24835
+INFO 2024-06-18 10:14:01,689 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 200 729
+INFO 2024-06-18 10:14:03,541 basehttp "POST /admin/Watches/time/1/delete/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:14:03,583 basehttp "GET /admin/Watches/time/ HTTP/1.1" 200 26300
+INFO 2024-06-18 10:14:03,615 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:05,633 basehttp "GET /admin/Watches/time/2/change/ HTTP/1.1" 200 25290
+INFO 2024-06-18 10:14:05,663 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:06,877 basehttp "GET /admin/Watches/time/2/delete/ HTTP/1.1" 200 24835
+INFO 2024-06-18 10:14:08,097 basehttp "POST /admin/Watches/time/2/delete/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:14:08,141 basehttp "GET /admin/Watches/time/ HTTP/1.1" 200 25027
+INFO 2024-06-18 10:14:08,167 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:14:08,174 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:14:08,182 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:13,007 basehttp "GET /admin/Watches/ HTTP/1.1" 200 19226
+INFO 2024-06-18 10:14:15,302 basehttp "GET /admin/Watches/watch/ HTTP/1.1" 200 55486
+INFO 2024-06-18 10:14:15,330 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:17,025 basehttp "GET /admin/Watches/watch/25180/change/ HTTP/1.1" 200 35651
+INFO 2024-06-18 10:14:17,053 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:14:17,053 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:14:17,070 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:17,097 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2024-06-18 10:14:17,097 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2024-06-18 10:14:23,693 basehttp "GET /admin/Watches/watch/ HTTP/1.1" 200 55486
+INFO 2024-06-18 10:14:23,720 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:29,371 basehttp "GET /admin/Watches/watch/add/ HTTP/1.1" 200 35185
+INFO 2024-06-18 10:14:29,404 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:32,710 basehttp "GET /admin/Watches/watch/ HTTP/1.1" 200 55486
+INFO 2024-06-18 10:14:32,750 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:35,159 basehttp "GET /admin/Watches/ HTTP/1.1" 200 19226
+INFO 2024-06-18 10:14:41,008 basehttp "GET /admin/Watches/mymodel/ HTTP/1.1" 200 26417
+INFO 2024-06-18 10:14:41,041 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:47,694 basehttp "GET /admin/Watches/mymodel/add/ HTTP/1.1" 200 28406
+INFO 2024-06-18 10:14:47,722 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:14:54,812 basehttp "POST /admin/Watches/mymodel/add/ HTTP/1.1" 200 28791
+INFO 2024-06-18 10:14:54,848 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:15:17,580 basehttp "POST /admin/Watches/mymodel/add/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:15:17,616 basehttp "GET /admin/Watches/mymodel/ HTTP/1.1" 200 26879
+INFO 2024-06-18 10:15:17,668 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:17:40,406 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/models.py changed, reloading.
+INFO 2024-06-18 10:17:41,120 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:19:24,770 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/models.py changed, reloading.
+INFO 2024-06-18 10:19:25,422 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:19:59,074 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/models.py changed, reloading.
+INFO 2024-06-18 10:19:59,704 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:21:45,813 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 10:21:50,716 basehttp "GET /admin/Watches/mymodel/ HTTP/1.1" 200 26678
+INFO 2024-06-18 10:21:50,745 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,746 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,748 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,749 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,749 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,749 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,751 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,752 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,752 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,758 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:50,768 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:21:50,783 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:54,330 basehttp "GET /admin/Watches/ HTTP/1.1" 200 19226
+INFO 2024-06-18 10:21:56,950 basehttp "GET /admin/Watches/time/ HTTP/1.1" 200 24865
+INFO 2024-06-18 10:21:56,980 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:21:58,957 basehttp "GET /admin/Watches/time/add/ HTTP/1.1" 200 26013
+INFO 2024-06-18 10:21:58,974 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:58,975 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:58,985 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:21:58,987 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:21:58,992 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:22:39,771 basehttp "POST /admin/Watches/time/add/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:22:39,826 basehttp "GET /admin/Watches/time/ HTTP/1.1" 200 26342
+INFO 2024-06-18 10:22:39,854 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:22:39,872 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2024-06-18 10:22:42,758 basehttp "GET /admin/ HTTP/1.1" 200 28479
+INFO 2024-06-18 10:22:42,798 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2024-06-18 10:22:45,692 basehttp "GET /admin/admin_interface/theme/ HTTP/1.1" 200 27019
+INFO 2024-06-18 10:22:45,736 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:22:50,181 basehttp "GET /admin/admin_interface/theme/ HTTP/1.1" 200 27019
+INFO 2024-06-18 10:22:50,218 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:23:00,008 basehttp "GET /admin/admin_interface/theme/1/change/ HTTP/1.1" 200 73089
+INFO 2024-06-18 10:23:00,035 basehttp "GET /static/colorfield/colorfield.js HTTP/1.1" 200 408
+INFO 2024-06-18 10:23:00,036 basehttp "GET /static/colorfield/jscolor/jscolor.js HTTP/1.1" 200 102106
+INFO 2024-06-18 10:23:00,049 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:24:13,442 basehttp "POST /admin/admin_interface/theme/1/change/ HTTP/1.1" 302 0
+INFO 2024-06-18 10:24:13,488 basehttp "GET /admin/admin_interface/theme/ HTTP/1.1" 200 27226
+INFO 2024-06-18 10:24:13,516 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:24:19,442 basehttp "GET /admin/admin_interface/theme/1/change/ HTTP/1.1" 200 73089
+INFO 2024-06-18 10:24:19,479 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:27:02,454 basehttp "GET /admin/admin_interface/ HTTP/1.1" 200 18472
+INFO 2024-06-18 10:27:04,078 basehttp "GET /admin/ HTTP/1.1" 200 28468
+INFO 2024-06-18 10:27:10,676 basehttp "GET /admin/Watches/watch/ HTTP/1.1" 200 55486
+INFO 2024-06-18 10:27:10,702 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,705 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,706 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,709 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,710 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,711 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,711 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,711 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,711 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,716 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 10:27:10,721 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2024-06-18 10:27:10,731 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2024-06-18 11:01:12,986 basehttp "GET /admin/ HTTP/1.1" 200 28468
+INFO 2024-06-18 11:01:13,075 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2024-06-18 11:01:20,645 basehttp "GET /watch/api/?brand=Omega HTTP/1.1" 200 103905
+INFO 2024-06-18 11:04:55,651 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/admin.py changed, reloading.
+INFO 2024-06-18 11:04:56,414 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:07:11,102 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/admin.py changed, reloading.
+INFO 2024-06-18 11:07:11,787 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:13:40,916 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/admin.py changed, reloading.
+INFO 2024-06-18 11:13:41,688 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:13:51,698 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:13:57,890 basehttp "GET /admin/ HTTP/1.1" 200 28468
+INFO 2024-06-18 11:13:57,983 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,458 basehttp "GET /admin/Watches/watch/ HTTP/1.1" 200 71811
+INFO 2024-06-18 11:14:03,485 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,487 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,488 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,488 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,489 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,490 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,491 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,493 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,494 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,499 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 11:14:03,502 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:03,522 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2024-06-18 11:14:21,385 basehttp "GET /admin/Watches/watch/?brand=Blancpain HTTP/1.1" 200 55789
+INFO 2024-06-18 11:14:21,425 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 11:14:27,561 basehttp "GET /admin/Watches/watch/?brand=Blancpain&price=1500.0 HTTP/1.1" 200 46561
+INFO 2024-06-18 11:14:27,591 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 11:14:33,017 basehttp "GET /admin/Watches/watch/?brand=Blancpain&price=1850.0 HTTP/1.1" 200 46561
+INFO 2024-06-18 11:14:33,044 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 11:14:38,132 basehttp "GET /admin/Watches/watch/?brand=Blancpain&price=3200.0 HTTP/1.1" 200 46561
+INFO 2024-06-18 11:14:38,160 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 11:14:59,194 basehttp "GET /admin/Watches/watch/?brand=Blancpain&price=3800.0 HTTP/1.1" 200 46561
+INFO 2024-06-18 11:14:59,236 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 11:22:10,831 basehttp "GET /admin/Watches/watch/?brand=Tudor&price=3800.0 HTTP/1.1" 200 47610
+INFO 2024-06-18 11:22:10,882 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 11:22:29,785 basehttp "GET /admin/Watches/watch/?price=3800.0 HTTP/1.1" 200 45533
+INFO 2024-06-18 11:22:29,826 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-06-18 11:36:04,155 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:36:10,513 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/urls.py changed, reloading.
+INFO 2024-06-18 11:36:11,115 autoreload Watching for file changes with StatReloader
+WARNING 2024-06-18 11:36:32,332 log Not Found: /
+WARNING 2024-06-18 11:36:32,332 basehttp "GET / HTTP/1.1" 404 2695
+WARNING 2024-06-18 11:36:38,515 log Not Found: /
+WARNING 2024-06-18 11:36:38,516 basehttp "GET / HTTP/1.1" 404 2695
+WARNING 2024-06-18 11:36:44,620 log Not Found: /$/
+WARNING 2024-06-18 11:36:44,621 basehttp "GET /$/ HTTP/1.1" 404 2719
+INFO 2024-06-18 11:37:43,024 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/urls.py changed, reloading.
+INFO 2024-06-18 11:37:43,842 autoreload Watching for file changes with StatReloader
+ERROR 2024-06-18 11:37:52,406 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework_swagger/views.py", line 32, in get
+    schema = generator.get_schema(request=request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/schemas/coreapi.py", line 158, in get_schema
+    links = self.get_links(None if public else request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/schemas/coreapi.py", line 145, in get_links
+    link = view.schema.get_link(path, method, base_url=self.url)
+AttributeError: 'AutoSchema' object has no attribute 'get_link'
+ERROR 2024-06-18 11:37:52,408 basehttp "GET / HTTP/1.1" 500 106299
+INFO 2024-06-18 11:38:55,642 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/urls.py changed, reloading.
+INFO 2024-06-18 11:38:56,470 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:39:02,832 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/urls.py changed, reloading.
+INFO 2024-06-18 11:39:03,536 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:39:21,550 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/urls.py changed, reloading.
+INFO 2024-06-18 11:39:22,332 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:39:44,178 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/urls.py changed, reloading.
+INFO 2024-06-18 11:39:44,981 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:43:13,064 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:43:19,073 basehttp "GET /admin/ HTTP/1.1" 200 28468
+INFO 2024-06-18 11:43:19,162 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2024-06-18 11:43:33,305 basehttp "GET /swagger/ HTTP/1.1" 200 2402
+INFO 2024-06-18 11:43:33,329 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2024-06-18 11:43:33,334 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 14964
+INFO 2024-06-18 11:43:33,336 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2024-06-18 11:43:33,339 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2024-06-18 11:43:33,342 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2024-06-18 11:43:33,344 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2024-06-18 11:43:33,348 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2024-06-18 11:43:33,509 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+ERROR 2024-06-18 11:43:33,571 log Internal Server Error: /swagger/
+Traceback (most recent call last):
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/view.py", line 33, in get_operation
+    query = self.get_query_parameters()
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/view.py", line 293, in get_query_parameters
+    natural_parameters = self.get_filter_parameters() + self.get_pagination_parameters()
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 409, in get_filter_parameters
+    fields += self.probe_inspectors(self.filter_inspectors, 'get_filter_parameters', filter_backend()) or []
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/query.py", line 42, in get_filter_parameters
+    return list(map(self.param_to_schema, filter_backend.get_schema_operation_parameters(self.view)))
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django_filters/rest_framework/backends.py", line 146, in get_schema_operation_parameters
+    filterset_class = self.get_filterset_class(view, queryset)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django_filters/rest_framework/backends.py", line 39, in get_filterset_class
+    assert issubclass(
+AssertionError: FilterSet model <class 'Watches.models.Watch'> does not match queryset model <class 'laptop.models.Laptop'>
+ERROR 2024-06-18 11:43:33,575 basehttp "GET /swagger/?format=openapi HTTP/1.1" 500 161548
+ERROR 2024-06-18 11:44:04,313 log Internal Server Error: /swagger/
+Traceback (most recent call last):
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/view.py", line 33, in get_operation
+    query = self.get_query_parameters()
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/view.py", line 293, in get_query_parameters
+    natural_parameters = self.get_filter_parameters() + self.get_pagination_parameters()
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 409, in get_filter_parameters
+    fields += self.probe_inspectors(self.filter_inspectors, 'get_filter_parameters', filter_backend()) or []
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/query.py", line 42, in get_filter_parameters
+    return list(map(self.param_to_schema, filter_backend.get_schema_operation_parameters(self.view)))
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django_filters/rest_framework/backends.py", line 146, in get_schema_operation_parameters
+    filterset_class = self.get_filterset_class(view, queryset)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django_filters/rest_framework/backends.py", line 39, in get_filterset_class
+    assert issubclass(
+AssertionError: FilterSet model <class 'Watches.models.Watch'> does not match queryset model <class 'laptop.models.Laptop'>
+ERROR 2024-06-18 11:44:04,320 basehttp "GET /swagger/?format=openapi HTTP/1.1" 500 161637
+ERROR 2024-06-18 11:45:16,800 log Internal Server Error: /redoc/
+Traceback (most recent call last):
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/view.py", line 33, in get_operation
+    query = self.get_query_parameters()
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/view.py", line 293, in get_query_parameters
+    natural_parameters = self.get_filter_parameters() + self.get_pagination_parameters()
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 409, in get_filter_parameters
+    fields += self.probe_inspectors(self.filter_inspectors, 'get_filter_parameters', filter_backend()) or []
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/drf_yasg/inspectors/query.py", line 42, in get_filter_parameters
+    return list(map(self.param_to_schema, filter_backend.get_schema_operation_parameters(self.view)))
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django_filters/rest_framework/backends.py", line 146, in get_schema_operation_parameters
+    filterset_class = self.get_filterset_class(view, queryset)
+  File "/Users/vishv/Documents/DjangoProject/enviorments/mysite3.10/lib/python3.10/site-packages/django_filters/rest_framework/backends.py", line 39, in get_filterset_class
+    assert issubclass(
+AssertionError: FilterSet model <class 'Watches.models.Watch'> does not match queryset model <class 'laptop.models.Laptop'>
+ERROR 2024-06-18 11:45:16,803 basehttp "GET /redoc/ HTTP/1.1" 500 160990
+INFO 2024-06-18 11:50:13,578 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Watches/filters.py changed, reloading.
+INFO 2024-06-18 11:50:14,400 autoreload Watching for file changes with StatReloader
+INFO 2024-06-18 11:50:20,040 basehttp "GET /swagger/ HTTP/1.1" 200 2402
+INFO 2024-06-18 11:50:20,062 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2024-06-18 11:50:20,064 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2024-06-18 11:50:20,066 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:50:20,067 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:50:20,067 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:50:20,068 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:50:20,068 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2024-06-18 11:50:20,253 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2024-06-18 11:50:20,313 basehttp "GET /swagger/?format=openapi HTTP/1.1" 200 15801
+INFO 2024-06-18 11:51:20,163 basehttp "GET /swagger/?format=openapi HTTP/1.1" 200 15801

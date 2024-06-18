@@ -45,13 +45,23 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'Profile.apps.ProfileConfig',
     'Watches.apps.WatchesConfig',
+    'sampleapp.apps.SampleappConfig',
     'laptop.apps.LaptopConfig',
     'oauth2_provider',
     'django_otp',
     'import_export',
-    'django_filters'
+    'django_filters',
+    'drf_yasg',
 
 ]
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Basic': {
+            'type': 'basic'
+        }
+    }
+}
 
 AUTH_USER_MODEL = 'users.CustomUser'
 AUTH_USER_MANAGER = 'users.managers.CustomUserManager'
@@ -66,7 +76,45 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django_otp.middleware.OTPMiddleware',
+    'mysite.custom_middleware.CustomMiddleWare'
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'django.log',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'myapp': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
 
 OTP_BACKENDS = {
     'default': 'django_otp.backends.RedisOTPBackend',

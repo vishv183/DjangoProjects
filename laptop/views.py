@@ -2,7 +2,7 @@ import csv
 from io import StringIO
 from django.shortcuts import render
 from rest_framework import generics, status
-from rest_framework.filters import OrderingFilter
+from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from Profile.serializer import UploadSerializer
@@ -15,7 +15,8 @@ from django_filters import rest_framework as filters
 class LaptopsListCreateView(generics.ListCreateAPIView):
     queryset = Laptop.objects.all()
     serializer_class = LaptopSerializer
-    filter_backends = (filters.DjangoFilterBackend,OrderingFilter)
+    search_fields = ['model']
+    filter_backends = (filters.DjangoFilterBackend,OrderingFilter,SearchFilter)
     filterset_class =  BaseFilter
 
 

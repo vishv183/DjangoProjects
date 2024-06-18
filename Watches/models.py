@@ -1,7 +1,6 @@
-from django.utils import timezone
-
 from django.db import models
-from import_export import resources
+from django.db.models import F
+from django.db.models.functions import Now, Pi
 
 # Create your models here.
 
@@ -30,8 +29,33 @@ class Watch(models.Model):
     created_at = models.DateTimeField()
     class Meta:
         ordering = ['id']
-
     def __str__(self):
         return f' {self.id} {self.brand}'
 
+class MyModel(models.Model):
+    age = models.IntegerField(db_default=18)
+    count = models.IntegerField(default=10)
+    created = models.DateTimeField(db_default=Now())
+    base = models.FloatField()
+    height = models.FloatField()
+    area = models.GeneratedField(
+        expression=F("base") * F("height"),
+        output_field=models.FloatField(),
+        db_persist=True,
+    )
+    class Meta:
+        ordering = ['id']
+
+    def __str__(self):
+        return f'{self.area}'
+
+SPORT_CHOICES = {  # Using a mapping instead of a list of 2-tuples.
+    "Martial Arts": {"judo": "Judo", "karate": "Karate"},
+    "Racket": {"badminton": "Badminton", "tennis": "Tennis"},
+    "unknown": "Unknown",
+}
+
+class Time(models.Model):
+    time = models.DateTimeField(auto_now_add=True)
+    sport = models.CharField(choices=SPORT_CHOICES, null=True)
 

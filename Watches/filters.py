@@ -26,10 +26,10 @@ class MyModelFilter(django_filters.FilterSet):
             # 'created_at': ['exact', 'in', 'gt', 'lt', 'gte', 'lte'],
         }
 
+
 class BaseFilter(django_filters.FilterSet):
     created_at = filters.DateTimeFromToRangeFilter()
     class Meta:
         fields = {
-
 
         }
