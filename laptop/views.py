@@ -1,7 +1,7 @@
 import csv
 from io import StringIO
 from django.shortcuts import render
-from rest_framework import generics, status
+from rest_framework import generics, status, request
 from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
@@ -10,7 +10,8 @@ from Watches.filters import BaseFilter
 from laptop.serializer import LaptopSerializer
 from laptop.models import Laptop
 from django_filters import rest_framework as filters
-
+import logging
+logger = logging.getLogger("user")
 # Create your views here.
 class LaptopsListCreateView(generics.ListCreateAPIView):
     queryset = Laptop.objects.all()
@@ -30,6 +31,7 @@ class UploadViewSet(ViewSet):
     serializer_class = UploadSerializer
 
     def list(self, request):
+        logger.info(f'  user = {request.user.username}')
         return Response("GET API")
 
     def create(self, request, file_upload=None):

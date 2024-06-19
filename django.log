@@ -479,3 +479,34 @@ INFO 2024-06-18 11:50:20,068 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1
 INFO 2024-06-18 11:50:20,253 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
 INFO 2024-06-18 11:50:20,313 basehttp "GET /swagger/?format=openapi HTTP/1.1" 200 15801
 INFO 2024-06-18 11:51:20,163 basehttp "GET /swagger/?format=openapi HTTP/1.1" 200 15801
+INFO 2024-06-19 06:12:20,035 autoreload Watching for file changes with StatReloader
+INFO 2024-06-19 06:12:44,225 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/laptop/views.py changed, reloading.
+INFO 2024-06-19 06:12:45,008 autoreload Watching for file changes with StatReloader
+INFO 2024-06-19 06:20:42,432 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/laptop/views.py changed, reloading.
+INFO 2024-06-19 06:20:43,235 autoreload Watching for file changes with StatReloader
+INFO 2024-06-19 06:21:46,904 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/laptop/views.py changed, reloading.
+INFO 2024-06-19 06:21:47,714 autoreload Watching for file changes with StatReloader
+INFO 2024-06-19 06:22:29,348 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/laptop/views.py changed, reloading.
+INFO 2024-06-19 06:22:30,145 autoreload Watching for file changes with StatReloader
+INFO 2024-06-19 06:23:48,729 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/laptop/views.py changed, reloading.
+INFO 2024-06-19 06:23:49,565 autoreload Watching for file changes with StatReloader
+INFO 2024-06-19 06:24:13,274 basehttp "GET /laptop/ HTTP/1.1" 200 5899
+INFO 2024-06-19 06:24:13,300 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,304 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,304 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,305 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,318 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,319 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,320 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,320 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,320 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,320 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,321 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2024-06-19 06:24:13,344 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+WARNING 2024-06-19 06:24:13,451 log Not Found: /favicon.ico
+WARNING 2024-06-19 06:24:13,452 basehttp "GET /favicon.ico HTTP/1.1" 404 2905
+WARNING 2024-06-19 06:24:17,352 log Not Found: /laptop/api/upload/
+WARNING 2024-06-19 06:24:17,352 basehttp "GET /laptop/api/upload/ HTTP/1.1" 404 4182
+INFO 2024-06-19 06:24:35,285 views   user = vishvmunjapara23@gmail.com
+INFO 2024-06-19 06:24:35,309 basehttp "GET /laptop/upload/ HTTP/1.1" 200 9081
+INFO 2024-06-19 06:47:51,043 autoreload /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/settings.py changed, reloading.

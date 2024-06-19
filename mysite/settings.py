@@ -78,43 +78,53 @@ MIDDLEWARE = [
     'django_otp.middleware.OTPMiddleware',
     'mysite.custom_middleware.CustomMiddleWare'
 ]
-
+LOG_PATH = 'logs/'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': '{levelname} {asctime} {module} {message}',
-            'style': '{',
+            'format': "[%(asctime)s] %(levelname)s [%(filename)s:%(lineno)s] %(message)s",
+            'datefmt': "%Y/%b/%d %H:%M:%S"
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
         },
     },
     'handlers': {
+        'django': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(str(LOG_PATH), 'django.log'),
+            'maxBytes': (1024 * 1024 * 10),
+            'backupCount': 10,
+            'formatter': 'verbose',
+        },
+        'user': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(str(LOG_PATH), 'user.log'),
+            'maxBytes': 1024 * 1024 * 10,
+            'backupCount': 10,
+            'formatter': 'verbose',
+        },
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
-        },
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': 'django.log',
-            'formatter': 'verbose',
+            'formatter': 'simple',
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file'],
-            'level': 'INFO',
-            'propagate': True,
+            'handlers': ['django', 'console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
         },
-        'myapp': {
-            'handlers': ['console', 'file'],
-            'level': 'DEBUG',
-            'propagate': True,
+        'user': {
+            'handlers': ['user', 'console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
         },
     },
 }
-
 
 OTP_BACKENDS = {
     'default': 'django_otp.backends.RedisOTPBackend',
@@ -200,7 +210,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 

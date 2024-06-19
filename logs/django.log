@@ -1,0 +1,4 @@
+[2024/Jun/19 12:34:46] DEBUG [autoreload.py:397] File /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/settings.py previous mtime: 1718780581.4988785, current mtime: 1718780685.2494495
+[2024/Jun/19 12:34:46] DEBUG [autoreload.py:371] /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/settings.py notified as changed. Signal results: [(<function template_changed at 0x1043eb400>, None), (<function translation_file_changed at 0x105d6ecb0>, None)].
+[2024/Jun/19 12:34:46] INFO [autoreload.py:266] /Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/mysite/settings.py changed, reloading.
+[2024/Jun/19 12:34:52] INFO [autoreload.py:668] Watching for file changes with StatReloader
