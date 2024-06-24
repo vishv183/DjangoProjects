@@ -1,4 +1,5 @@
 from rest_framework import permissions
+from rest_framework.permissions import BasePermission
 
 
 class IsOwnerOrSuperuser(permissions.BasePermission):
@@ -13,3 +14,9 @@ class IsOwnerOrSuperuser(permissions.BasePermission):
 
         # Allow users to edit their own profile.
         return obj == request.use
+
+
+class DefaultPermission(BasePermission):
+    def has_permission(self, request, view):
+        # Your permission logic here
+        return request.user and request.user.is_authenticated

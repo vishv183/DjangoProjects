@@ -1,0 +1,26 @@
+openapi: 3.0.0
+info:
+  title: Your API
+  version: 1.0.0
+  description: API documentation for managing watches.
+
+tags:
+  - name: Watches
+    description: Operations related to managing watches.
+
+paths:
+  /watches/:
+    get:
+      summary: Retrieve all watches
+      tags:
+        - Watches
+      operationId: listWatches
+      responses:
+        '200':
+          description: A list of watches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Watch'

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django_filters import filters
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -27,10 +28,19 @@ class CombinedFilter(MyModelFilter, BaseFilter):
 
 
 class WatchListAPIView(generics.ListAPIView):
+    """
+     API endpoint to list watches with filtering and ordering.
+
+     This view returns a list of watches with optional filtering and ordering.
+
+     """
     queryset = Watch.objects.all()
     serializer_class = WatchSerializer
     filter_backends = (filters.DjangoFilterBackend, OrderingFilter)
     filterset_class = CombinedFilter
+    schema = {
+        'description': 'Watch List',
+    }
 
 
 def index(request):

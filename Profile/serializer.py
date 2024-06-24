@@ -9,13 +9,13 @@ from rest_framework.serializers import Serializer, FileField
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
-        token = super().get_token(user)
+        token = super().get_token(user=user)
 
         # Add custom claims
         token['username'] = user.username
         token['email'] = user.email
-        print(f'Token :{token}')
-        print(f' username: {user.username}, email: {user.email}')
+        # Debugging output
+        print(f'username: {user.username}, email: {user.email}')
         return token
 
 

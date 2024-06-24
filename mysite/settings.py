@@ -72,7 +72,18 @@ SWAGGER_SETTINGS = {
         'Basic': {
             'type': 'basic'
         }
-    }
+    },
+    'api_key': '',  # An API key
+    'is_authenticated': True,  # Set to True to enforce user authentication
+    'is_superuser': True,
+    'LOGIN_URL': 'admin/login',
+    'LOGOUT_URL': 'admin/logout',
+}
+
+SIMPLE_JWT = {
+    'SIGNING_KEY': 'your-secret-key-here',
+    'ALGORITHM': 'HS256',
+    # other settings...
 }
 
 AUTH_USER_MODEL = 'users.CustomUser'

@@ -1,8 +1,8 @@
 import csv
 import randomtimestamp
 
-csv_file = '/Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/watches.csv'
-output_csv_file = '/Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/watches_with_timestamps.csv'
+csv_file = '/Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/laptops_extended.csv'
+output_csv_file = '/Users/vishv/Documents/DjangoProject/DjangoProject2/mysite/Laptops_extended_timestamps.csv'
 
 data = []
 with open(csv_file, 'r', newline='') as file:
@@ -13,10 +13,10 @@ with open(csv_file, 'r', newline='') as file:
         row['created_at'] = randomtimestamp.randomtimestamp(start_year=2021, text=True, pattern='%Y-%m-%d %H:%M:%S')
 
         # Remove commas from the price field and convert to float
-        if row['price']:
-            row['price'] = float(row['price'].replace(',', ''))
-        else:
-            row['price'] = None
+        # if row['price']:
+        #     row['price'] = float(row['price'].replace(',', ''))
+        # else:
+        #     row['price'] = None
         # Append the modified row to the data list
         data.append(row)
 
