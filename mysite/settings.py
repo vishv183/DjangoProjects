@@ -73,12 +73,15 @@ SWAGGER_SETTINGS = {
             'type': 'basic'
         }
     },
-    'api_key': '',  # An API key
-    'is_authenticated': True,  # Set to True to enforce user authentication
-    'is_superuser': True,
-    'LOGIN_URL': 'admin/login',
-    'LOGOUT_URL': 'admin/logout',
+    'api_key': '',
+    "is_portal_user":True,
+
+    'LOGIN_URL' : '/admin/login/',
+    'LOGOUT_URL' : '/admin/logout/',
+    'LOGIN_REDIRECT_URL' : '/swagger/',
 }
+
+LOGIN_REDIRECT_URL = '/swagger/'
 
 SIMPLE_JWT = {
     'SIGNING_KEY': 'your-secret-key-here',
@@ -99,9 +102,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django_otp.middleware.OTPMiddleware',
-    'mysite.custom_middleware.CustomMiddleWare',
+    'mysite.custom_middleware.SwaggerAccessMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+LOGIN_URL = '/admin/login/'
+LOGIN_REDIRECT_URL= '/swagger/'
+
 LOG_PATH = 'logs/'
 LOGGING = {
     'version': 1,

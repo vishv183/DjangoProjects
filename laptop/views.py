@@ -60,26 +60,44 @@ class LaptopViewSet(viewsets.ModelViewSet):
 class UploadViewSet(ViewSet):
     serializer_class = UploadSerializer
 
+    @swagger_auto_schema(
+        operation_description="Retrieve list of uploaded files",
+        responses={200: "GET API"}
+    )
     def list(self, request):
         logger.info(f'  user = {request.user.username}')
         return Response("GET API")
 
+    @swagger_auto_schema(
+        operation_description="Upload a CSV file to update or create Laptop entries",
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            properties={
+                'file_uploaded': openapi.Schema(type=openapi.TYPE_FILE, description='CSV file to upload')
+            }
+        ),
+        responses={
+            200: "POST API and you have uploaded a {} file".format('file_type'),
+            400: "Only CSV files are allowed."
+        }
+    )
     def create(self, request, file_upload=None):
         file_uploaded = request.FILES.get('file_uploaded')
+        if not file_uploaded:
+            return Response({"error": "No file uploaded"}, status=status.HTTP_400_BAD_REQUEST)
+
         file_uploaded_read = file_uploaded.read()
         decode_file = file_uploaded_read.decode("utf-8")
         file_object = StringIO(decode_file)
-        print(f'type of file object is {file_object}')
         content_type = file_uploaded.content_type
         if content_type != 'text/csv':
             response = {"error": "Only CSV files are allowed."}
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
-        print(type(content_type))
+        logger.info(f'File type: {content_type}')
 
         csvFile = csv.DictReader(file_object)
         for line in csvFile:
-            print(line['Screen'])
-            print(line)
+            logger.info(f'Processing line: {line}')
             laptop, created = Laptop.objects.update_or_create(
                 laptop=line.get('Laptop'),
                 defaults={

@@ -10,6 +10,7 @@ from Profile.views import CustomTokenObtainPairView, RegisterApi, UserListUpdate
 from django.urls import path, include
 from rest_framework import routers
 
+from django.contrib import admin
 urlpatterns = [
     path('', index, name='index'),
     path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -20,7 +21,6 @@ urlpatterns = [
     # path('api/update-user/<int:pk>/', UpdateUser.as_view(), name='UpdateUser'),
     path('user-update/', UserListUpdateView.as_view(), name='superuer'),
     path("user-update-serializer/", UserUpdateSView.as_view(), name='userupdate serializer'),
-    path('generate-otp/', generate_otp, name='generate-otp'),
+    path('generate-otp/', generate_otp, name='generate_otp'),
     path('validate-otp/', validate_otp, name='validate-otp'),
-
 ]

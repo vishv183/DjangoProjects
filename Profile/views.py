@@ -30,6 +30,24 @@ class CustomTokenObtainPairView(TokenObtainPairView):
     """
     serializer_class = CustomTokenObtainPairSerializer
 
+    @swagger_auto_schema(
+        method='post',
+        operation_description="Obtain JWT token pair with custom claims",
+        responses={
+            200: openapi.Response(description='JWT token pair obtained successfully', schema=openapi.Schema(
+                type=openapi.TYPE_OBJECT,
+                properties={
+                    'access': openapi.Schema(type=openapi.TYPE_STRING),
+                    'refresh': openapi.Schema(type=openapi.TYPE_STRING),
+                }
+            )),
+            400: "Bad Request"
+        },
+    )
+    @api_view(['POST'])
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
+
 
 class RegisterApi(generics.GenericAPIView):
     serializer_class = RegisterSerializer
@@ -62,26 +80,10 @@ class RegisterApi(generics.GenericAPIView):
 
 
 class UserListUpdateView(generics.ListAPIView, generics.UpdateAPIView):
+    """
+    API endpoint to list all user
+    """
     serializer_class = UserSerializer
-
-    def get_permissions(self):
-        if self.request.user.is_superuser:
-            return [permissions.IsAuthenticated()]
-        else:
-            return [permissions.IsAuthenticated(), IsOwnerOrSuperuser()]
-
-    @swagger_auto_schema(operation_description="Retrieve the list of users")
-    def get_queryset(self):
-        queryset = get_user_model().objects.all()
-        if not self.request.user.is_superuser:
-            queryset = queryset.filter(id=self.request.user.id)
-        return queryset
-
-    def get_serializer_class(self):
-        if self.request.method in ['PUT', 'PATCH']:
-            return UpdateUserSerializer
-        return UserSerializer
-
 
 class UserUpdateSView(generics.UpdateAPIView):
     """
@@ -134,19 +136,14 @@ class UserDetailView(generics.RetrieveUpdateAPIView):
 
 
 @swagger_auto_schema(
-    method='post',
+    method='get',
     operation_description="Generate OTP for the authenticated user",
-    request_body=openapi.Schema(
-        type=openapi.TYPE_OBJECT,
-        required=[],
-        properties={}
-    ),
     responses={
         201: openapi.Response(description='OTP generated successfully'),
         400: "Bad Request"
     },
 )
-@api_view(['POST'])
+@api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def generate_otp(request):
     """

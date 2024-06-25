@@ -26,6 +26,7 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractUser, models.Model):
+    is_portal_user = models.BooleanField(default=False)
     # Completely remove the username field
     email = models.EmailField(unique=True)
     phone_number = models.CharField(blank=True, max_length=20)
